@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MILLIA'SVALIDATION FORM</title>
+    <link rel="stylesheet" href="./question6.css">
+</head>
+<body> 
+    <H1>HTML VALIDATION FORM</H1>
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+        <label>Email:</label>
+        <input type="email" name="email" required><br><br><br><br>
+
+        <label>Name:</label>
+        <input type="text" name="name" required><br><br><br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" required><br><br><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        function validateForm() {
+            /* Get input values*/
+            const email = document.forms["myForm"]["email"].value;
+            const name = document.forms["myForm"]["name"].value;
+            const password = document.forms["myForm"]["password"].value;
+
+            /* Check if any value is empty*/
+            if (email === "" || name ==="" || password === "") {
+                alert("Please fill all the values");
+                return false; /* Prevent form submission*/
+            }
+        } 
+
+    </script>
+    
+</body>
+</html>
